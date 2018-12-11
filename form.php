@@ -1,18 +1,21 @@
 <?php
-if( $_REQUEST["name"] || $_REQUEST["age"] ) {
-    echo "Welcome ". $_REQUEST['name']. "<br />";
-    echo "You are ". $_REQUEST['age']. " years old.";
-    exit();
-}
+error_reporting(0);
 ?>
-<html>
+    <html>
 <body>
 
-<form action = "<?php $_PHP_SELF ?>" method = "POST">
-    Name: <input type = "text" name = "name" />
-    Age: <input type = "text" name = "age" />
-    <input type = "submit" />
+<form action="" method="get">
+    Name: <input type="text" name="name"><br>
+    E-mail: <input type="text" name="email"><br>
+    <input type="submit" name="submit">
 </form>
 
 </body>
 </html>
+<?php
+if (isset($_GET["submit"])) {
+//if($_SERVER['REQUEST_METHOD']=='GET') {
+    echo "Welcome" . $_GET["name"] . "<br>";
+    echo "Your email address is:" . $_GET["email"];
+}
+ ?>

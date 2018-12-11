@@ -8,7 +8,7 @@ error_reporting(0);
     <title>Insert Form Data In Database</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="get">
     Name : <input type="text" name="username" required>
     <br/>
     Email : <input type="text" name="email" required>
@@ -20,11 +20,12 @@ error_reporting(0);
 
 <?php
 
-if($_SERVER['REQUEST_METHOD']=='POST') {
-   // $name =$_POST['username'];
-   // $email = $_POST['email'];
-    $name=filter_input(INPUT_POST,'username');
-    $email=filter_input(INPUT_POST,'email');
+//if($_SERVER['REQUEST_METHOD']=='POST') {
+if (isset($_GET["submit"])) {
+   $name =$_GET['username'];
+   $email = $_GET['email'];
+   // $name=filter_input(INPUT_POST,'username');
+  //  $email=filter_input(INPUT_POST,'email');
     echo $name;
     echo $email;
 

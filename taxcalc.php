@@ -29,5 +29,6 @@ function AnnualTax($gender,$income){
     return $tax;
 }
 AnnualTax('male',8000000);
+AnnualTax('female',8000000);
 
 
